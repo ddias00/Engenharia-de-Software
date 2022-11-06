@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int n, i;
+    int n, i, soma;
 
     cout<<"Informe a quantidade de numeros a serem lidos: ";
     cin>>n;
@@ -27,14 +27,22 @@ int main()
     
     pt2 = V2;
     
-    int V3;
+    int *V3 = new int[n];
     int *pt3;
-    pt3 = &V3;
+    pt3 = V3;
 
     for(i = 0; i < n; i++)
-        *pt3 = *pt3 + *(pt1+i) + *(pt2+i);
+        *(pt3+i) = *(pt1+i) + *(pt2+i);
 
-    cout<<"\nSoma dos vetores: "<<V3<<endl;
+    for(i = 0; i < n; i++)
+        cout<<"\nSoma dos vetores na posição "<<i<<": "<<V3[i]<<endl;
+
+    soma = 0;
+    
+    for(i = 0; i < n; i++)
+        soma = soma + *(pt3+i);
+
+    cout<<"\nSoma dos vetores: "<<soma<<endl;
 
     delete V1, V2, V3;
 
