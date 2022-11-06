@@ -12,6 +12,7 @@ int main()
 
     int arr[n];
 
+///// Inserion-Sort /////////////
     cout<<"\nInsira os numeros para arr: \n";
     for(i = 0; i < n; i++)
         cin>>arr[i];
@@ -27,6 +28,7 @@ int main()
                 break;
         }
     }
+/////////////////////////////////
 
     for(i=0; i<n; i++)
         cout << arr[i] << " | ";
